@@ -1,13 +1,10 @@
-n=int(input())
-s=0
-while n>0:
-    r=n%10
-    n=n//10
-    s=s+(r**2)
-    if n==0 and s>9:
-        n=s
-        s=0
-if s==1 or s==7:
-    print("True")
-else:
-    print("False")
+def Happy(n):
+  past = set()
+  while n != 1:
+        n = sum(int(i)**2 for i in str(n))
+        if n in past:
+            return False
+        past.add(n)
+  return True
+nm=int(input())
+print(Happy(nm))
